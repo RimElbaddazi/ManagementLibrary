@@ -9,7 +9,7 @@ spring:
         - id: r1
           uri: http://localhost:8081/
           predicates:
-            - Path=/book/**
+            - Path=/books/**
     discovery:
       enabled: false
 server:
