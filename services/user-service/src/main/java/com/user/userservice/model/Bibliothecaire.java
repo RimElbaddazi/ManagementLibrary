@@ -21,7 +21,7 @@ public class Bibliothecaire extends Utilisateur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Long id;
+    private Long id;
 
     @Column(name = "emplacement")
     private String emplacement;

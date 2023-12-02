@@ -13,6 +13,9 @@ import javax.validation.constraints.Email;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+
+@Inheritance(strategy = InheritanceType.JOINED)
+
 public class Utilisateur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
