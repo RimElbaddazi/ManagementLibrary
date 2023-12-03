@@ -16,28 +16,39 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(nullable = false)
     private String reference;
+
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateAjout;
+
     @Column(nullable = false)
     private String libelle;
+
     private String auteur;
+
     private String editeur;
+
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Langue langue;
+
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Categorie categorie;
+
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private GenreLivre genre;
+
     private String description;
+
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private EtatLivre etat;
+
     @Column(nullable = false)
     private int nbrExemplaire;
 

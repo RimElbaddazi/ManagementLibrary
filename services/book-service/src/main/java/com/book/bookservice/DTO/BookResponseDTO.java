@@ -27,3 +27,4 @@ public class BookResponseDTO {
     private String description;
     private EtatLivre etat;
 }
+

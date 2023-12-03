@@ -12,17 +12,10 @@ public class GatewayServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GatewayServiceApplication.class, args);
 	}
-<<<<<<< HEAD
 
 	DiscoveryClientRouteDefinitionLocator dynamicRoutes (ReactiveDiscoveryClient rdc,
 														 DiscoveryLocatorProperties dlp) {
 		return new DiscoveryClientRouteDefinitionLocator( rdc, dlp);
-=======
-	@Bean
-	RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
-		return builder.routes()
-				.route(r->r.path("/books/**").uri("http://localhost:8081/"))
-				.build();
->>>>>>> c710175c53d9a25b3b49350f3424d14a6e2109a5
+
 	}
 }
