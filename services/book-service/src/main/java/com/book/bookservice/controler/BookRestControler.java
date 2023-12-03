@@ -7,9 +7,7 @@ import com.book.bookservice.model.Book;
 import com.book.bookservice.repository.BookRepository;
 import com.book.bookservice.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -17,6 +15,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class BookRestControler {
     private BookRepository bookRepository;
+
     @Autowired
     private BookMapper bookMapper;
 
@@ -26,10 +25,12 @@ public class BookRestControler {
     public BookRestControler(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
+    
     @GetMapping("/books")
     public List<Book> getBooks() {
         return bookRepository.findAll();
     }
+
     @GetMapping("/books/{id}")
     public Book getBook (@PathVariable Long id) {
         return bookRepository.findById(id).orElseThrow(()-> new RuntimeException(String.format("Le livre %s est introuvable !!",id)));
@@ -62,8 +63,7 @@ public class BookRestControler {
 
     @DeleteMapping("/books/{id}")
     public void deleteBook (@PathVariable Long id) {
-        Book book= bookRepository.findById(id).orElseThrow(()-> new RuntimeException(String.format("Le livre %s est introuvable !!",id)));
-
+        Book book= bookRepository.findById(id).orElseThrow(()-> new RuntimeException(String.format("Le livre de %s est introuvable !!",id)));
         if ( book != null ) bookRepository.delete(book);
     }
 

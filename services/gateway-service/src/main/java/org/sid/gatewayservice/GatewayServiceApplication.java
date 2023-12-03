@@ -2,9 +2,9 @@ package org.sid.gatewayservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.gateway.route.RouteLocator;
-import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
-import org.springframework.context.annotation.Bean;
+import org.springframework.cloud.client.discovery.ReactiveDiscoveryClient;
+import org.springframework.cloud.gateway.discovery.DiscoveryClientRouteDefinitionLocator;
+import org.springframework.cloud.gateway.discovery.DiscoveryLocatorProperties;
 
 @SpringBootApplication
 public class GatewayServiceApplication {
@@ -13,10 +13,8 @@ public class GatewayServiceApplication {
 		SpringApplication.run(GatewayServiceApplication.class, args);
 	}
 
-	@Bean
-	RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
-		return builder.routes()
-				.route(r->r.path("/books/**").uri("http://localhost:8081/"))
-				.build();
+	DiscoveryClientRouteDefinitionLocator dynamicRoutes (ReactiveDiscoveryClient rdc,
+														 DiscoveryLocatorProperties dlp) {
+		return new DiscoveryClientRouteDefinitionLocator( rdc, dlp);
 	}
 }
