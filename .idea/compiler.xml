@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="stock-service" />
         <module name="config-service" />
         <module name="inventory-service" />
-        <module name="user-service" />
         <module name="book-service" />
         <module name="gateway-service" />
         <module name="loan-service" />
+        <module name="user-service" />
+        <module name="discovery-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,14 +23,16 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="book-service" options="-parameters" />
+      <module name="book-service" options="" />
       <module name="book-service (1)" options="-parameters" />
       <module name="book-service (2)" options="-parameters" />
-      <module name="config-service" options="-parameters" />
-      <module name="gateway-service" options="-parameters" />
+      <module name="config-service" options="" />
+      <module name="discovery-service" options="-parameters" />
+      <module name="gateway-service" options="" />
       <module name="inventory-service" options="-parameters" />
-      <module name="loan-service" options="-parameters" />
-      <module name="user-service" options="-parameters" />
+      <module name="loan-service" options="" />
+      <module name="stock-service" options="-parameters" />
+      <module name="user-service" options="" />
     </option>
   </component>
 </project>
