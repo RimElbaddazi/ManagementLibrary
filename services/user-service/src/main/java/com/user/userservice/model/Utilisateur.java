@@ -11,19 +11,22 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 
-@Inheritance(strategy = InheritanceType.JOINED)
+@Entity
+@Table(name = "Utilisateur")
 
-public class Utilisateur {
+public abstract class Utilisateur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
 
+    @Column(name = "reference", nullable = false)
+    protected String reference;
+
     @Column(name = "nom", nullable = false)
     protected String nom;
 
-    @Column(name = "prenom")
+    @Column(name = "prenom", nullable = false)
     protected String prenom;
 
     @Column(name = "email", nullable = false, unique = true)
@@ -33,14 +36,14 @@ public class Utilisateur {
     protected String motDePasse;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "role")
+    @Column(name = "role", nullable = false)
     protected Role role;
 
-    public Utilisateur(Long id, String nom, String prenom, String email) {
-        this.id = id;
+    public Utilisateur(String reference, String nom, String prenom, String email, Role role) {
+        this.reference = reference;
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
+        this.role = role;
     }
-
 }
