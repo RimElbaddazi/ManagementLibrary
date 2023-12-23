@@ -23,14 +23,14 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="book-service" options="" />
+      <module name="book-service" options="-parameters" />
       <module name="book-service (1)" options="-parameters" />
       <module name="book-service (2)" options="-parameters" />
       <module name="config-service" options="" />
-      <module name="discovery-service" options="" />
-      <module name="gateway-service" options="" />
+      <module name="discovery-service" options="-parameters" />
+      <module name="gateway-service" options="-parameters" />
       <module name="inventory-service" options="-parameters" />
-      <module name="loan-service" options="" />
+      <module name="loan-service" options="-parameters" />
       <module name="stock-service" options="" />
       <module name="user-service" options="-parameters" />
     </option>
