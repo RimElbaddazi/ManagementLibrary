@@ -26,10 +26,10 @@ public class UserServiceApplication {
 	CommandLineRunner start (BibliothecaireRepository bibliothecaireRepository, AdherentRepository adherentRepository){
 		return args -> {
 
-			bibliothecaireRepository.save(new Bibliothecaire(UUID.randomUUID().toString(), "Dupont", "Jean", "jean.dupont@outlook.ma","Etage 1"));
+			bibliothecaireRepository.save(new Bibliothecaire(UUID.randomUUID().toString(), "Dupont", "Jean", "jean.dupont@outlook.ma","123456","Etage 1"));
 
-			adherentRepository.save(new Adherent(UUID.randomUUID().toString(), "Martin", "Pierre", "pierre.martin@gmail.com","ENSAM"));
-			adherentRepository.save(new Adherent(UUID.randomUUID().toString(), "ELBADDAZI", "Rim", "rim.elb@gmail.com","EMSI"));
+			adherentRepository.save(new Adherent(UUID.randomUUID().toString(), "Martin", "Pierre", "pierre.martin@gmail.com","123456","ENSAM"));
+			adherentRepository.save(new Adherent(UUID.randomUUID().toString(), "ELBADDAZI", "Rim", "rim.elb@gmail.com","123456","EMSI"));
 		};
 	}
 

@@ -54,4 +54,6 @@ public class AdherentController implements UtilisateurController<AdherentRespons
         if ( adherent != null ) iService.deleteUser(id);
     }
 
+
+
 }

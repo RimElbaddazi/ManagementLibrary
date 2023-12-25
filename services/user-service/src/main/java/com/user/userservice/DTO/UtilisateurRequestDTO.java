@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor @NoArgsConstructor @Builder
 public class UtilisateurRequestDTO {
 
-    protected String nom;
-    protected String prenom;
+//    protected String nom;
+//    protected String prenom;
     protected String email;
     protected String motDePasse;
 

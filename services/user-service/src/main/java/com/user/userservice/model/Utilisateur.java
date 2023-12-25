@@ -1,17 +1,13 @@
 package com.user.userservice.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
-@Data
+@Getter@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
 @Entity
 @Table(name = "Utilisateur")
 
@@ -39,11 +35,12 @@ public abstract class Utilisateur {
     @Column(name = "role", nullable = false)
     protected Role role;
 
-    public Utilisateur(String reference, String nom, String prenom, String email, Role role) {
+    public Utilisateur(String reference, String nom, String prenom, String email,String motDePasse, Role role) {
         this.reference = reference;
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
+        this.motDePasse = motDePasse;
         this.role = role;
     }
 }
