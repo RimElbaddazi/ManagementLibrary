@@ -27,12 +27,10 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       const email = this.loginForm.get('email')?.value;
       const password = this.loginForm.get('password')?.value;
-  
       this.authService.login(email, password).subscribe({
         next: (response) => {
           if (response) {
-            console.log(response);
-            localStorage.setItem('user', JSON.stringify(response));
+            this.authService.updateAuthStatus(true, response);
             if (response.role === 'ADMIN') {
               this.router.navigate(['/admin']);
             } else {

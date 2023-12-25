@@ -10,8 +10,4 @@ export class AdminComponent {
 
 constructor(private router:Router){}
 
-  logOut(): void {
-    localStorage.removeItem('user');
-    this.router.navigate(['/']);
-  }
 }
