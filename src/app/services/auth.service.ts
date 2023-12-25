@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { User } from '../models/app.models';
+import { Login } from '../models/app.models';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,7 @@ export class AuthService {
    private apiUrl = 'http://localhost:8082/api/login'
 
   login(email:string, password:string):Observable<any>{
-    const requestData: User = {
+    const requestData: Login = {
       email: email,
       motDePasse: password,
     };

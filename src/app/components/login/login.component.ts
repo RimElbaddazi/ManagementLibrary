@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
   loginForm?: any;
   loginError!: string;
 
-
   constructor(private fb: FormBuilder,private authService:AuthService,private router:Router){}
 
   ngOnInit(): void {

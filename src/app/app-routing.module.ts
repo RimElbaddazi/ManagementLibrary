@@ -6,7 +6,10 @@ import { CustomerComponent } from './components/customer/customer.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
-  {path:'admin',component:AdminComponent},
+  {
+    path: 'admin',
+    loadChildren: () => import('./components/admin/admin.module').then(m => m.AdminModule)
+  },
   {path:'customer',component:CustomerComponent},
 ];
 
